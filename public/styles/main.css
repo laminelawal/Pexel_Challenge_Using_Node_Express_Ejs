@@ -1,0 +1,296 @@
+:root{
+    --btnSelectedBack: #191717;
+    --btnOnWhite: #CCC8AA;
+    --btnOnBlack: white;
+    --textOnBlack: white;
+    --textOnWhite: black;
+    --fontSizeBigTitle: 25px;
+    --fontSizeAccountName: 18px;
+    --fontSizeTextDec: 14px;
+    --fontSizeMediumTitle: 23px;
+    --fontFamily:'Plus Jakarta Sans', sans-serif;
+    --font-familytwo: 'Ubuntu', sans-serif;
+    --middleContainer: 900px;
+    --allContainer: 100%;
+}
+
+/* GENERAL STYLES */
+*{
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    font-family: var(--fontFamily);
+    font-family: var(--font-familytwo);
+    user-select: none;
+}
+body{
+    height: 100vh;
+}
+.middleContainer{
+    width: 1200px;
+    padding: 10px;
+    margin: 0 auto;
+}
+.allContainer{
+    width: 100%;
+    margin: 0 auto;
+    padding: 5px;
+}
+.fontSizeMediumTitle{
+    font-size: var(--fontSizeMediumTitle);
+}
+
+/* STYLEING TOP HEADER */
+.hero{
+    width: 100%;
+    height: 500px;
+    position: relative;
+    /* BACKGROUND_IMAGE  FROM Pattern monster  */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 40% 0%;
+}
+
+.hero:before{
+    position: absolute;
+    width: 100%;
+    height: 500px;
+    content: "";
+    background-color: black;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0.5;
+    filter: blur(4px);
+}
+.topHeader{
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    color: var(--textOnBlack);
+    align-items: center;
+    z-index: 999;
+}
+.topHeader .logo{
+    display: flex;
+    align-items: center;
+}
+.logo h2{ margin-left: 10px; cursor: pointer; font-weight: 700;}
+.links a{
+    text-decoration: none;
+    color: var(--textOnBlack);
+    font-size: var(--fontSizeAccountName);
+    padding: 5px;
+    transition: 0.3s ease;
+}
+.links a:hover{text-decoration: underline;}
+.links .activeBtn{
+    background-color: var(--btnOnBlack);padding: 10px 15px; color: var(--textOnWhite);
+    border-radius: 10px;
+}
+
+/* CENTER STYLES */
+
+.center_text{
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%,-50%);
+    color: var(--textOnBlack);
+    line-height: 80px;
+    font-weight: 500;
+}
+
+/* BOTTOM HEADER */
+
+.bottomHeader{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    color: var(--btnOnBlack);
+    justify-content: space-between;
+    background-color: black;
+}
+form{
+    display: flex;
+}
+.bottomHeader form input[type="text"]{
+    padding: 10px 15px;
+    flex: 1;
+    /* border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0; */
+    outline: none;
+    border: none;
+    font-size: var(--fontSizeAccountName);
+}
+.bottomHeader form input[type="submit"]{
+    padding: 10px 15px;
+    color: var(--textOnWhite);
+    background-color: var(--btnOnWhite);
+    /* border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px; */
+    font-weight: 500;
+    font-size: var(--fontSizeAccountName);
+    border-left: none;
+    outline: none;
+    border: none;
+}
+.bottomHeader .socials{
+    display: flex;
+}
+.bottomHeader .socials i{
+    padding: 15px 20px;background-color: var(--btnOnWhite);
+    cursor: pointer; color: var(--textOnWhite);
+}
+.bottomHeader .socials i:hover{
+    background-color: white;
+    color: var(--textOnWhite);
+}
+
+/* USERNAME  */
+.userName{
+    color: var(--textOnBlack);
+    font-size: var(--fontSizeAccountName);
+    position: absolute;
+    right: 10px;
+    bottom: 60px;
+}
+
+
+/* SECOND HEADER STYLIZING */
+
+.secondHeader{
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+    position: fixed;
+    top: -60px;
+    opacity: 0;
+    transition: top  0.5s;
+    transition: opacity  0.5s;
+    z-index: 999999;
+    align-items: center;
+}
+.secondHeader .logo{
+    display: flex;
+    align-items: center;
+    color: white;
+}
+.secondHeader form input[type="submit"]{
+    padding: 10px 20px;
+    color: var(--textOnWhite);
+    background-color: var(--btnOnWhite);
+    /* border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px; */
+    font-weight: 500;
+    font-size: var(--fontSizeAccountName);
+    border-left: none;
+    outline: none;
+    border: none;
+}
+form{
+    display: flex;
+    align-items: center;
+}
+form  input[type="text"]{
+    padding: 10px 20px;
+    flex: 1;
+    /* border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0; */
+    outline: none;
+    border: none;
+    font-size: var(--fontSizeAccountName);
+}
+
+
+/* DA MODIFICARE ANCORA */
+
+
+
+
+/* STYLIZING THE SHOW IMAGES CONTAINER */
+
+.header_SIC{
+    display: flex;
+    justify-content: center;
+    line-height: 50px;
+    align-items: center;
+}
+.header_SIC a{
+    padding: 10px;
+    text-decoration: none;
+    color: var(--textOnWhite);
+    position: relative;
+    font-size: var(--fontSizeAccountName);
+}
+.header_SIC_title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: calc(100vh - 90vh);
+}
+.header_SIC_title h1{
+    font-size: var(--fontSizeMediumTitle);
+}
+.header_SIC_title span{
+    background-color: var(--btnOnWhite);
+    font-size: var(--fontSizeTextDec);
+    padding: 10px;
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 20px;
+}
+.cards{
+    align-content: center;
+}
+.cards img{
+    object-fit: cover;
+}
+
+.login{
+    position: absolute;
+    z-index: 99999;
+    background-color: var(--btnOnWhite);
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: block;
+}
+
+.detailpassword{
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%,-50%);
+}
+.detailpassword input{
+    padding: 10px;
+    border: none;
+    outline: none;
+    font-size: var(--fontSizeTextDec);
+}
+.detailpassword h1{
+    font-size: var(--fontSizeMediumTitle);
+}

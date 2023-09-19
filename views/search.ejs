@@ -1,0 +1,10 @@
+
+    <!-- Your search results content goes here -->
+    <h1>Search Results for: <%= query %></h1>
+    <div class="image-grid">
+        <% searchResults.forEach((result) => { %>
+            <div class="image">
+                <img src="<%= result.imageUrl %>" alt="Image" width="300px">
+            </div>
+        <% }); %>
+    </div>

@@ -133,3 +133,6 @@ dist
 #SECRETS DATA
 secrets.txt
 login.ejs
+security.js
+index_copy.js
+index_copy.ejs

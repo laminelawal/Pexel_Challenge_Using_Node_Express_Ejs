@@ -87,6 +87,7 @@ body{
     padding: 5px;
     transition: 0.3s ease;
 }
+.links{display: flex; align-items: center;}
 .links a:hover{text-decoration: underline;}
 .links .activeBtn{
     background-color: var(--btnOnBlack);padding: 10px 15px; color: var(--textOnWhite);
@@ -293,4 +294,65 @@ form  input[type="text"]{
 }
 .detailpassword h1{
     font-size: var(--fontSizeMediumTitle);
+}
+
+
+.location{
+    position: absolute;
+    padding: 10px;
+    border: none;
+    outline: none;
+    top: 10px;
+    right: 10px;
+    z-index: 999999;
+}
+
+
+@media screen and (max-width: 800px) {
+    .image-grid{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media screen and (max-width: 640px) {
+    .image-grid{
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .topHeader .linkes{
+        display: none ;
+    }
+    .logo h2{
+        font-size: 18px !important;
+    }
+    .bottomHeader .socials{
+        display: none;
+    }
+    .secondHeader .linkes{
+        display: none;
+    }
+    .bottomHeader{
+        display: flex;
+        justify-content: center;
+    }
+    .center_text{
+        line-height: 20px;
+        width: 100%;
+        padding: 0 20px;
+    }
+    .center_text h3{
+        font-size: 30px !important;
+    }
+    .secondHeader input[type="text"]{
+        padding: 5px;
+        width: 100px;
+        font-size: 14px;
+    }
+    .secondHeader input[type="submit"]{
+        padding: 5px !important;
+        width: 60px;
+        margin-right: 10px;
+        font-size: 14px !important;
+    }
 }

@@ -20,6 +20,8 @@
 </head>
 <body>
     <%- include("partials/secondHeader.ejs") %>
+
+    <!--  -->
     <div class="hero allContainer" style="background-image: url('<%=imageUrl%>');">
         
         <!-- <img src="pattern_squares-and-squares-2_1_3_2-2_55_2__000000_090495_626062.png" width="400"  height="500"> -->
@@ -32,11 +34,19 @@
                 <h2 class="fontSizeMediumTitle">Paxel</h2>
             </div>
             <!-- links -->
+            
             <div class="links">
+              <div class="wheater_status">
+                <img src="images/drizzle.png" alt="" id="updateImg" width="30px">
+                <i id="getlocation" class="fa fa-location-arrow" style="cursor: pointer; margin-left: 10px; margin-right: 10px; font-size: 18px !important;"></i>
+              </div>
+              <div class="linkes">
                 <a href="#show_image">Explore <i class="fa fa-arrow-circle-o-down"></i></a>
                 <a href="#">License</a>
                 <a href="#" class="activeBtn">Join</a>
+              </div>
             </div>
+            
         </header>
 
         <!-- CENTER CONTENT TEXT -->
@@ -97,7 +107,8 @@
    
     </div>
     </div>
-    <script src="/config.js"></script>
+
+    <script src="/config.js" ></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>

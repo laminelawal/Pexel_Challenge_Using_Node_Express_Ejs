@@ -2,9 +2,16 @@
 import express from "express"
 import bodyParser from "body-parser"
 import axios from "axios"
+import fetch from "node-fetch"
+let temp = "50%";
 // import { dirname } from "path";
 // import { fileURLToPath } from "url";
 // const __dirname = dirname(fileURLToPath(import.meta.url));
+
+
+
+
+
 
  let imageArray = [];
 // // My apiKey
@@ -18,11 +25,12 @@ import axios from "axios"
 // // Creating express app and PORT
  const app = express();
  const port = 3000;
-
+// app.set('view engine', 'ejs');
+// app.use(express.static(__dirname + '/public'));
 
 // // The static styles in public
  app.use(express.static("public"))
-
+// app.use(express.json())
 app.use(bodyParser.urlencoded({extended : true}))
 
 
@@ -56,8 +64,9 @@ app.use(bodyParser.urlencoded({extended : true}))
               userName: userName,
               userUrl: userUrl,
               images: imageArray,
-              randomImages: randomImages
+              randomImages: randomImages,temp:temp
           } )
+          console.log(temp)
       }catch(err){
           console.error(err)
       }
@@ -73,7 +82,7 @@ app.get("/search", async (req, res) => {
          `https://api.pexels.com/v1/search?query=${query}&page=10&per_page=15`,
          config
          )
-         
+
       const result = response.data;
        imageArray = result.photos.map((photo) => ({
         imageLink: photo.src.large,
@@ -85,13 +94,36 @@ app.get("/search", async (req, res) => {
       res.status(500).json({ error: "Internal server error" });
     }
   });
-  
-  
+
+
 
 
 app.get("/index", (req,res)=>{
   res.redirect("/")
 })
+
+app.get("/location", async (req,res)=>{
+  
+  try {
+    const apiKey = '383cb14d5884d28703457a69bdecabf6'; // Replace with your actual API key
+    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}`;
+
+    const response = await fetch(apiUrl);
+    const data = await response.json();
+
+     // Send the weather data as JSON response
+    console.log(data)
+    res.redirect("/")
+  } catch (error) {
+    console.error('Error fetching weather data:', error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+})
+
+
+ // Serve static files like CSS and JS from a 'public' folder
+
+
 // // Listening server Port
  app.listen(port,()=>{
      console.log("Server is working on PORT = ["+port+"]")

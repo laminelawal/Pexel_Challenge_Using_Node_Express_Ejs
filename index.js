@@ -2,7 +2,6 @@
 import express from "express"
 import bodyParser from "body-parser"
 import axios from "axios"
-import fetch from "node-fetch"
 let temp = "50%";
 // import { dirname } from "path";
 // import { fileURLToPath } from "url";
@@ -102,23 +101,6 @@ app.get("/index", (req,res)=>{
   res.redirect("/")
 })
 
-app.get("/location", async (req,res)=>{
-  
-  try {
-    const apiKey = '383cb14d5884d28703457a69bdecabf6'; // Replace with your actual API key
-    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}`;
-
-    const response = await fetch(apiUrl);
-    const data = await response.json();
-
-     // Send the weather data as JSON response
-    console.log(data)
-    res.redirect("/")
-  } catch (error) {
-    console.error('Error fetching weather data:', error);
-    res.status(500).json({ error: 'Internal Server Error' });
-  }
-})
 
 
  // Serve static files like CSS and JS from a 'public' folder
